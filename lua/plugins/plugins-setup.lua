@@ -12,15 +12,13 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  -- Speed up loading Lua modules
-  use "lewis6991/impatient.nvim"
+  -- speed up loading Lua modules
+  use 'lewis6991/impatient.nvim'
 
   use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+
   -- theme
-  use 'Mofiqul/vscode.nvim'
+  use 'folke/tokyonight.nvim'
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -64,6 +62,9 @@ return require('packer').startup(function(use)
 
   -- toggle terminal 
   use "akinsho/toggleterm.nvim"
+
+  -- syntax highlight
+  use "nvim-treesitter/nvim-treesitter"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -10,9 +10,6 @@ vim.opt.wrap = false
 
 vim.opt.mouse:append("a")
 
--- system clipboard
-vim.opt.clipboard:append("unnamedplus")
-
 -- search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -20,4 +17,3 @@ vim.opt.smartcase = true
 -- theme
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-vim.cmd[[colorscheme vscode]]
