@@ -22,3 +22,6 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- symbols-outline
 vim.keymap.set("n", "<leader>so", ":SymbolsOutline<CR>")
+
+-- hop
+vim.keymap.set("n", "<leader>h", ":HopWord<CR>")
