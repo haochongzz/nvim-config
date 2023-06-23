@@ -25,3 +25,7 @@ vim.keymap.set("n", "<leader>so", ":SymbolsOutline<CR>")
 
 -- hop
 vim.keymap.set("n", "<leader>h", ":HopWord<CR>")
+
+-- git diffview
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>")
