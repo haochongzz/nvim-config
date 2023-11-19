@@ -19,16 +19,41 @@ return require('packer').startup(function(use)
 
   -- theme
   use 'folke/tokyonight.nvim'
-
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'ellisonleao/gruvbox.nvim',
+    requires = {
+      'rktjmp/lush.nvim',
+    }
+  }
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+
   -- language server protocol
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig"
+  }
+
+  -- greeter
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.startify'.config)
+    end
+  }
+
+  -- search and replace
+  use {
+    "nvim-pack/nvim-spectre",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   }
 
   -- completion
@@ -65,12 +90,36 @@ return require('packer').startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   -- syntax highlight
-  use "nvim-treesitter/nvim-treesitter"
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = {
+      "p00f/nvim-ts-rainbow",
+      "Badhi/nvim-treesitter-cpp-tools",
+    }
+  }
 
   -- motion
   use {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
+  }
+
+  -- auto save
+  use 'Pocco81/auto-save.nvim'
+
+  -- which key
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

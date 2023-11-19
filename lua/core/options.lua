@@ -1,19 +1,25 @@
-vim.opt.number = true
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
 
 -- tab
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 
-vim.opt.wrap = false
+opt.wrap = false
 
-vim.opt.mouse:append("a")
+opt.mouse:append("a")
 
 -- search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- theme
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.signcolumn = "yes"
+
+-- curosr
+opt.cursorline = true
